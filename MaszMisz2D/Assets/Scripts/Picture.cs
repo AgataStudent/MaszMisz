@@ -20,7 +20,16 @@ public class Picture : MonoBehaviour
     private void OnMouseDown()
     {
         GameManager.FolderName = gameObject.name;
-        SceneManager.LoadScene("GameScene");
+        if(gameObject.name == "Animal")
+            SceneManager.LoadScene("GameScene");
+        if(gameObject.name == "Forest")
+            SceneManager.LoadScene("GameScene");
+
+        if (gameObject.name == "Nature")
+            SceneManager.LoadScene("HardScene");
+        if(gameObject.name == "Wather")
+            SceneManager.LoadScene("HardScene");
+
     }
 
 }

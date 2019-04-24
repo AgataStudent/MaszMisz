@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int spawn = 14;
     public int lvl = 1;
     public int material = 3;
+    
 
     private List<Puzzle> puzzleList = new List<Puzzle>();
 
@@ -77,36 +78,21 @@ public class GameManager : MonoBehaviour
         puzzleList[14].transform.position = new Vector3(startPosition.x + (3*offset.x), startPosition.y - (3 * offset.y), 0.0f);
 
         }
-        else if (lvl == 2 )
+        else 
         {
             puzzleList[0].transform.position = new Vector3(startPosition.x, startPosition.y, 0.0f);
             puzzleList[1].transform.position = new Vector3(startPosition.x + offset.x, startPosition.y, 0.0f);
-            puzzleList[2].transform.position = new Vector3(startPosition.x + (2 * offset.x), startPosition.y, 0.0f);
-            puzzleList[3].transform.position = new Vector3(startPosition.x + (3 * offset.x), startPosition.y, 0.0f);
 
-            puzzleList[4].transform.position = new Vector3(startPosition.x, startPosition.y - offset.y, 0.0f);
-            puzzleList[5].transform.position = new Vector3(startPosition.x + offset.x, startPosition.y - offset.y, 0.0f);
-            puzzleList[6].transform.position = new Vector3(startPosition.x + (2 * offset.x), startPosition.y - offset.y, 0.0f);
-            puzzleList[7].transform.position = new Vector3(startPosition.x + (3 * offset.x), startPosition.y - offset.y, 0.0f);
-            puzzleList[8].transform.position = new Vector3(startPosition.x + (4 * offset.x), startPosition.y - offset.y, 0.0f);
+            puzzleList[2].transform.position = new Vector3(startPosition.x, startPosition.y - offset.y, 0.0f);
+            puzzleList[3].transform.position = new Vector3(startPosition.x + offset.x, startPosition.y - offset.y, 0.0f);
+            puzzleList[4].transform.position = new Vector3(startPosition.x + (2 * offset.x), startPosition.y - offset.y, 0.0f);
 
-            puzzleList[9].transform.position = new Vector3(startPosition.x, startPosition.y - (2 * offset.y), 0.0f);
-            puzzleList[10].transform.position = new Vector3(startPosition.x + offset.x, startPosition.y - (2 * offset.y), 0.0f);
-            puzzleList[11].transform.position = new Vector3(startPosition.x + (2 * offset.x), startPosition.y - (2 * offset.y), 0.0f);
-            puzzleList[12].transform.position = new Vector3(startPosition.x + (3 * offset.x), startPosition.y - (2 * offset.y), 0.0f);
-            puzzleList[13].transform.position = new Vector3(startPosition.x + (4 * offset.x), startPosition.y - (2 * offset.y), 0.0f);
+            puzzleList[5].transform.position = new Vector3(startPosition.x, startPosition.y - (2 * offset.y), 0.0f);
+            puzzleList[6].transform.position = new Vector3(startPosition.x + offset.x, startPosition.y - (2 * offset.y), 0.0f);
+            puzzleList[7].transform.position = new Vector3(startPosition.x + (2 * offset.x), startPosition.y - (2 * offset.y), 0.0f);
 
-            puzzleList[14].transform.position = new Vector3(startPosition.x, startPosition.y - (3 * offset.y), 0.0f);
-            puzzleList[15].transform.position = new Vector3(startPosition.x + offset.x, startPosition.y - (3 * offset.y), 0.0f);
-            puzzleList[16].transform.position = new Vector3(startPosition.x + (2 * offset.x), startPosition.y - (3 * offset.y), 0.0f);
-            puzzleList[17].transform.position = new Vector3(startPosition.x + (3 * offset.x), startPosition.y - (3 * offset.y), 0.0f);
-            puzzleList[18].transform.position = new Vector3(startPosition.x + (4 * offset.x), startPosition.y - (3 * offset.y), 0.0f);
 
-            puzzleList[19].transform.position = new Vector3(startPosition.x, startPosition.y - (4 * offset.y), 0.0f);
-            puzzleList[20].transform.position = new Vector3(startPosition.x + offset.x, startPosition.y - (4 * offset.y), 0.0f);
-            puzzleList[21].transform.position = new Vector3(startPosition.x + (2 * offset.x), startPosition.y - (4 * offset.y), 0.0f);
-            puzzleList[22].transform.position = new Vector3(startPosition.x + (3 * offset.x), startPosition.y - (4 * offset.y), 0.0f);
-            puzzleList[23].transform.position = new Vector3(startPosition.x + (4 * offset.x), startPosition.y - (4 * offset.y), 0.0f);
+
         }
     }
 
@@ -152,7 +138,7 @@ public class GameManager : MonoBehaviour
                     puzzle.go_up = true;
                     }
 
-                if((Physics.Raycast(ray_down, out hit, 1.0f, collisionMask) == false) && (puzzle.moved == false) && (puzzle.transform.position.y > (startPosition.y - 3 * offset.y)))
+                if((Physics.Raycast(ray_down, out hit, 1.0f, collisionMask) == false) && (puzzle.moved == false) && (puzzle.transform.position.y > (startPosition.y - material * offset.y)))
                     {
                     Debug.Log("Move Down Allowed");
                     puzzle.go_down = true;
@@ -164,7 +150,7 @@ public class GameManager : MonoBehaviour
                     puzzle.go_left = true;
                     }
 
-                if ((Physics.Raycast(ray_right, out hit, 1.0f, collisionMask) == false) && (puzzle.moved == false) && (puzzle.transform.position.x < (startPosition.x +3 * offset.x)))
+                if ((Physics.Raycast(ray_right, out hit, 1.0f, collisionMask) == false) && (puzzle.moved == false) && (puzzle.transform.position.x < (startPosition.x + material * offset.x)))
                     {
                     Debug.Log("Move Right Allowed");
                     puzzle.go_right = true;

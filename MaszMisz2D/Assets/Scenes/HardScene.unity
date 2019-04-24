@@ -209,17 +209,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePrefab: {fileID: 8231702461141522752, guid: 5494438c2ee41be45a43e6af8cd20c27,
     type: 3}
-  spawn: 23
+  spawn: 7
   lvl: 2
-  material: 4
+  material: 2
   startPosition: {x: -3.55, y: 1.77}
   offset: {x: 2.03, y: 1.52}
   collisionMask:
     serializedVersion: 2
     m_Bits: 256
-  FolderName: Nature
   FullPicture: {fileID: 1418509070}
---- !u!1 &1234019834
+--- !u!1 &620284252
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,8 +226,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1234019836}
-  - component: {fileID: 1234019835}
+  - component: {fileID: 620284254}
+  - component: {fileID: 620284253}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -236,18 +235,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &1234019835
+--- !u!108 &620284253
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234019834}
+  m_GameObject: {fileID: 620284252}
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -274,15 +273,15 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!4 &1234019836
+--- !u!4 &620284254
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234019834}
+  m_GameObject: {fileID: 620284252}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -0.026435241, y: 1.532848, z: 0.09375}
+  m_LocalPosition: {x: -0.10571167, y: 0.14517173, z: 0.09375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
