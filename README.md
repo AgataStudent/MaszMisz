@@ -1,2 +1,0 @@
-# MaszMisz
-aplikacja na androida
